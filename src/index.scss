@@ -1,0 +1,24 @@
+@import '_variables';
+
+
+
+.container {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 0 10px;
+    height: 100%;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: $mainGrey;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

@@ -1,0 +1,13 @@
+@import "../../variables";
+.about {
+  h3 {
+    font-size: 40px;
+  }
+  &__inner {
+    width: 100%;
+    padding: 20px;
+    background-color: $secondGray;
+    margin-top: 30px;
+    border-radius: 15px;
+  }
+}

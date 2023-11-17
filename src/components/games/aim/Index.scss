@@ -1,0 +1,81 @@
+@import '../../../variables';
+.game-window{
+    height: 600px;
+    background-color: $mainGreen;
+    margin-top: -5px;
+    font-family: 'Oswald', sans-serif;
+}
+.aim-svg{
+    width: 100px;
+    height: 100px;
+}
+.aim-title-game{
+    font-size: 50px;
+    margin-top: 80px;
+}
+.game-window-inner{
+    position: relative;
+    gap: 40px;
+    height: 600px;
+    width: 100%;
+}
+.content{
+    gap: 40px;
+}
+.target-image{
+    width: 100px;
+    height: 100px;
+}
+.target{
+    position: absolute;
+    transform: translate(0, -100%);
+}
+.counter {
+    position: absolute;
+    top: 90%;
+    right: 10%;
+    font-size: 40px;
+}
+.end-menu-buttons{
+    gap: 20px;
+}
+.home-link{
+    font-size: 35px;
+    border-radius: 15px;
+    padding: 5px 15px;
+    background-color: $hoverGreen;
+    transition: 0.2s ease-in;
+    &:hover{
+        background-color: $secondGray;
+        color: $mainPurple;
+    }
+}
+.save-result{
+    font-size: 35px;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px;
+    background-color: $hoverGreen;
+    font-family: 'Oswald', sans-serif;
+    transition: 0.2s ease-in;
+    &:hover{
+        background-color: $secondGray;
+        color: $mainPurple;
+    }
+}
+.retry{
+    font-size: 35px;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px;
+    background-color: $hoverGreen;
+    font-family: 'Oswald', sans-serif;
+    transition: 0.2s ease-in;
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+    &:hover{
+        background-color: $secondGray;
+        color: $mainPurple;
+    }
+}

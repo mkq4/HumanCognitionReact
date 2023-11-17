@@ -1,0 +1,25 @@
+@import "../../../variables";
+.start-img{
+    width: 200px;
+    height: 200px;
+}
+.start-text{
+    font-size: 50px;
+}
+.button {
+    width: 250px;
+    height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    border: 3px solid #000;
+    border-radius: 15px;
+    background-color: $mainPink;
+    color: #000;
+    font-family: inherit;
+    transition: 0.3s;
+  
+    &:hover {
+      background-color: $mainPurple;
+      color: $mainGrey;
+    }
+  }

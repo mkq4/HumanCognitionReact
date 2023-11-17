@@ -1,0 +1,39 @@
+@import '../../../variables';
+.SignIn-window{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 450px;
+    height: 600px;
+    border: 5px solid $hoverGreen;
+    border-radius: 15px;
+    background-color: $mainGreen;
+    text-align: center;
+    input {
+        height: 50px;
+        font-size: 30px;
+        border-radius: 5px;
+        border-color: $hoverGreen;
+    }
+    form{
+        gap: 5px;
+    }
+    button{
+        margin-top: 150px;
+    }
+}
+.login-notification{
+    width: 450px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 130px;
+    font-size: 35px;
+    background-color: $mainGreen;
+    border: 5px solid $hoverGreen;
+    border-radius: 15px;
+    transform: translate(-5px, 0px);
+    transition: 0.3s;
+}

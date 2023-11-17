@@ -1,0 +1,30 @@
+@import '../../_variables';
+.thinking-image{
+    transition: 0.5s;
+    border-radius: 50%;
+    path{
+        transition: 0.2s;
+    }
+    &:hover path{
+        fill: $hoverGreen
+    }
+    
+}
+h1,p{
+    margin: 0;
+}
+h1{
+    font-size: 50px;
+}
+p{
+    font-size: 30px;
+    text-align: center;
+}
+span{
+    color: $mainPurple;
+    text-transform: uppercase;
+    transition: 0.2s;
+    &:hover{
+        color: $hoverGreen
+    }
+}

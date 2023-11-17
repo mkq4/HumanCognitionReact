@@ -1,0 +1,59 @@
+@import "../../../variables";
+.link {
+  color: $mainPurple;
+}
+.field {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+}
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  color: $mainGrey;
+}
+body {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+.counter-misses {
+  position: absolute;
+  top: 45%;
+  right: -10%;
+  font-size: 40px;
+}
+.button {
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  border: 3px solid #000;
+  border-radius: 15px;
+  background-color: $mainPink;
+  color: #000;
+  font-family: inherit;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $mainPurple;
+    color: $mainGrey;
+  }
+}
+.win-menu {
+  p {
+    font-size: 40px;
+  }
+}
+.lose-menu {
+  p {
+    font-size: 45px;
+  }
+}
+.active {
+    border-radius: 15px;
+}
