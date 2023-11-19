@@ -32,7 +32,7 @@ const End = ({ setWindowState, time }) => {
               const params = {
                 id: "2",
                 name: "Aim Trainer",
-                bestResult: middleSec
+                bestResult: middleSec + ' sec'
               };
               axiosPatch(params);
             }}

@@ -1,0 +1,48 @@
+@import '../../../variables';
+.text{
+    background-color: $secondGray;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 40px;
+    border: 5px solid $hoverGreen;
+    letter-spacing: 1px;
+}
+.used {
+    color: $mainPurple;
+    position: relative;
+    
+}
+span.used::after {
+    content: "|";
+    position: absolute;
+    animation: blink 1s step-end infinite;
+    top: 0px;left: 70%;
+}
+
+.end-menu{
+    height: 600px;
+    background-color: $mainGreen;
+    .time{
+      font-size: 60px; 
+      span{
+        color: $mainPurple;
+      }
+    }
+}
+.start-menu {
+    height: 600px;
+    background-color: $mainGreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    cursor: pointer;
+}
+@keyframes blink {
+    50% {
+        opacity: 0; /* Make the cursor invisible at 50% of the animation */
+    }
+}
+.time {
+    text-align: center;
+}

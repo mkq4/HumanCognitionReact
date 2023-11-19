@@ -16,17 +16,21 @@ const MainLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setLoginNotfication(false);
-        console.log(userCredential._tokenResponse.email);
+        localStorage.setItem('email', userCredential._tokenResponse.email)
+        setLoginNotfication(true)
+        setTextNotification('You`re successfuly loginned!')
+        setEmail('')
+        setPassword('')
       })
       .catch((err) => {
         if (
           err.message == "Firebase: Error (auth/invalid-login-credentials)."
         ) {
           setLoginNotfication(true);
-          setTextNotification('Wrong login!')
+          setTextNotification('Wrong login or password!')
         } else if(err.message == "INVALID_LOGIN_CREDENTIALS") {
           setLoginNotfication(true)
-          setLoginNotfication('Wrong password!')
+          setLoginNotfication('Wrong login or password!')
         } 
         else if(err.message == "TOO_MANY_ATTEMPTS_TRY_LATER : Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later.") {
           setLoginNotfication(true)

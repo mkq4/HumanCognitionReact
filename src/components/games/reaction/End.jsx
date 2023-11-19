@@ -21,7 +21,7 @@ const End = ({ time }) => {
               const params = {
                 id: "1",
                 name: "Reaction Speed",
-                bestResult: time
+                bestResult: time + ' ms'
               };
               axiosPatch(params);
             }}

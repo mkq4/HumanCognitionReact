@@ -2,14 +2,25 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 import GameStats from './GameStats'
 import './Index.scss'
-const   MainProfile = ( {email = ''} ) => {
+
+const   MainProfile = () => {
   const [data, setData] = React.useState([])
   const [loadData, setLoadData] = React.useState(false)
+  const [email, setEmail] = React.useState('')
+  // const [haveEmail, setHaveEmail] = React.useState(false)
+
   setTimeout(()=> {setLoadData(true)}, 400)
   useEffect( ()=> {
     axios.get('https://652d87fdf9afa8ef4b2794b0.mockapi.io/profile')
       .then(res => setData(res.data))
+
+    if(localStorage.getItem(email) != '') {
+      setEmail(localStorage.getItem('email'))
+    }
   }, [loadData])
+
+
+
 
   console.log(data);
   return (

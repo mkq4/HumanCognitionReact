@@ -5,6 +5,8 @@ import { auth } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import RegNotification from "./RegNotification";
 import LoginForReg from "../login/LoginForReg";
+// import db from "../firebase";
+// import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 const MainSignUp = () => {
   const [nickName, setNickName] = useState(null);
   const [email, setEmail] = useState(null);
@@ -12,16 +14,23 @@ const MainSignUp = () => {
   const [regNotification, setRegNotification] = useState(false);
   const [login, setLogin] = useState(false);
   const [msgToNotification, setMsgToNotification] = useState('')
-  const setNickNameToLocalStorage = () => {
-    localStorage.setItem('nickName', nickName)
+
+  // const usersCollection = collection(db, "users")
+  // console.log(usersCollection);
+  // const createEmail = async () => {
+  //   await addDoc(usersCollection, {email: email})
+  // }
+
+  const setEmailToLocalStorage = () => {
+    localStorage.setItem('email', email)
   }
   const signUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         setRegNotification(false);
-        setNickNameToLocalStorage();
-        // change href
+        setEmailToLocalStorage();
+        console.log(email);
       })
       .catch((err) => {
         console.log(err.message);
@@ -86,7 +95,6 @@ const MainSignUp = () => {
             if (password != null || email != null || nickName != null) {
               signUp
               setRegNotification(false)
-              setNickNameToLocalStorage
             } else {
               setRegNotification(true);
             }

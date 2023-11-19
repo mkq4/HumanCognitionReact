@@ -149,30 +149,32 @@ const Game = () => {
       ) : null}
       {gameState === "lose-menu" ? (
         <div className="lose-menu">
-					<p>You loose</p>
-					<p className="mb-50">Level {level}</p>
-					<div className="end-menu-buttons d-flex align-center justify-center">
-        <Link className="home-link cu-p" to="/">
-          Home
-        </Link>
-        <Link to="/profile">
-          <button
-            className="save-result cu-p"
-            onClick={() => {
-              const params = {
-                id: "3",
-                name: "Chimp Test",
-                bestResult: level
-              };
-              axiosPatch(params);
-            }}
-          >
-            Save result
+          <p>You loose</p>
+          <p className="mb-50">Level {level}</p>
+          <div className="end-menu-buttons d-flex align-center justify-center">
+            <Link className="home-link cu-p" to="/">
+              Home
+            </Link>
+            <Link to="/profile">
+              <button
+                className="save-result cu-p"
+                onClick={() => {
+                  const params = {
+                    id: "3",
+                    name: "Chimp Test",
+                    bestResult: level + ' level',
+                  };
+                  axiosPatch(params);
+                }}
+              >
+                Save result
+              </button>
+            </Link>
+          </div>
+          <button className="retry" onClick={() => window.location.reload()}>
+            Retry
           </button>
-        </Link>
-      </div>
-      <button className="retry" onClick={() => window.location.reload()}>Retry</button>
-				</div>
+        </div>
       ) : null}
     </>
   );

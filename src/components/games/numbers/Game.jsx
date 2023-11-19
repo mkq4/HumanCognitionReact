@@ -84,7 +84,7 @@ const Game = () => {
                     const params = {
                       id: "4",
                       name: "Numbers Memory",
-                      bestResult: gameLevel
+                      bestResult: gameLevel + ' level'
                     };
                     axiosPatch(params);
                   }}

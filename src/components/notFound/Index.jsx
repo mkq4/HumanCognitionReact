@@ -12,7 +12,7 @@ const NotFound = () => {
         </div>
         <h1 className='notFound-title'>Whoops...</h1>
         <p className='notFound-text'>404 error <br/> page don`t found</p>
-        <p className='back'>Back to <span>
+        <p className='back'>Back to <span className='span'>
             <Link to='/'>Home</Link>
         </span> </p>
     </div>
