@@ -7,7 +7,7 @@ const GameWindow = () => {
   return (
     <div className="game-window">
       <div className="container">
-        <div className="game-window-inner">
+        <div className="game-window-inner d-flex justify-center">
           {windowState ? (
             <Game />
           ) : (
