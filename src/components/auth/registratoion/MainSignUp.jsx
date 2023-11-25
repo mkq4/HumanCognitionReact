@@ -28,7 +28,8 @@ const MainSignUp = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
-        setRegNotification(false);
+        setRegNotification(true);
+        setMsgToNotification('You have successfully registered!')
         setEmailToLocalStorage();
         console.log(email);
       })

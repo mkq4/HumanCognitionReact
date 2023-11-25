@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 import GameStats from './GameStats'
 import './Index.scss'
+import { Link } from 'react-router-dom'
 
 const   MainProfile = () => {
   const [data, setData] = React.useState([])
@@ -11,25 +12,38 @@ const   MainProfile = () => {
 
   setTimeout(()=> {setLoadData(true)}, 400)
   useEffect( ()=> {
-    axios.get('https://652d87fdf9afa8ef4b2794b0.mockapi.io/profile')
+    axios.get(import.meta.env.VITE_PROFILE)
       .then(res => setData(res.data))
 
     if(localStorage.getItem(email) != '') {
       setEmail(localStorage.getItem('email'))
+    } else {
+      setEmail( Reg )
     }
   }, [loadData])
 
+  const logOut = () => {
+    localStorage.clear('email')
+  }
 
-
+  const Reg = () => {
+    return <Link to= '/registration'/>
+  }
 
   console.log(data);
   return (
     <main className='main'>
     <div className="container">
       <div className='main__inner'>
-        <h1 className='profile-name'>Profile name</h1>
+        <div className="d-flex justify-between">
+          <h1 className='profile-name'>Profile name: {email}</h1>
+          <p className='logout mt-20' onClick={() => {
+            logOut()
+            window.location.reload()
+          }}>Log out</p>
+        </div>
         <div className='statistics'>
-          <h2 className='mb-10'>Statistics: {email}</h2>
+          <h2 className='mb-10'>Statistics:</h2>
           <div className='game-res d-flex justify-between mb-20'>
             <p>game:</p>
             <p>result:</p>

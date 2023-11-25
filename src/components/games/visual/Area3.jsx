@@ -10,7 +10,6 @@ const Area3 = (  ) => {
   const blocksLength = 9
 
 
-
     const randomBlocks = [];
 
     function generateBlocksId(length) {
@@ -30,6 +29,7 @@ const Area3 = (  ) => {
 
     useEffect(()=> {
       const blocks = document.querySelectorAll('#block');
+      console.log(blocks);
       blocks.forEach((el) => {
         blocksId.forEach((element) => {
           if(element == el.className) {
@@ -43,22 +43,26 @@ const Area3 = (  ) => {
         bgcBlocks.forEach((el)=> el.classList.remove('bgc'))
       }, time)
       bgcBlocks.forEach(el => el.classList.add('bgc'))
-      const activeBlocks = document.querySelectorAll('.active-block')
-      console.log(activeBlocks);
-      activeBlocks.forEach(el => el.addEventListener('click', () => { // клик по блоку
-        el.classList.add('bgc')
-        // console.log(123);
-        
-        setUserBlocksCount(userBlocksCount + 1) // правильно
-        if(userBlocksCount === blocksCount) { // win
-          activeBlocks.forEach((el)=> el.classList.remove('bgc'))
-          setBlocksCount(blocksCount + 1)
-          setLevel(level + 1)
+      
+    }, [])
+    const blocks = document.querySelectorAll('#block');
+    console.log(blocks);
+    blocks.forEach((el) => el.addEventListener('click', (e) => {
+    console.log('userBlocksCount ',userBlocksCount);
+    console.log('blocksCount ', blocksCount);
+      const currentBlock = e.target
+      if(currentBlock.classList.contains('active-block')){ // если правильно
+        currentBlock.classList.add('bgc')
+        setUserBlocksCount(userBlocksCount + 1)
+        console.log('userBlocksCount ',userBlocksCount);
+        console.log('blocksCount ', blocksCount);
+        if(userBlocksCount === blocksCount) {
+          console.log('win');
         }
-
-      }))
-    }, [level])
-
+      } else { //если не правильно
+        console.log(false);
+      }
+    }))
   return (
     <div className='grid area3'>
         <div className="1" id='block'></div>

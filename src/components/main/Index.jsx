@@ -8,7 +8,7 @@ const Main = () => {
   const [cards, setCards] = react.useState([]);
 
   useEffect(() => {
-    const cardsUrl = "https://652d87fdf9afa8ef4b2794b0.mockapi.io/items";
+    const cardsUrl = import.meta.env.VITE_ITEMS;
     axios.get(cardsUrl).then((res) => setCards(res.data));
   }, []);
 

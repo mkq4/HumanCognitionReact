@@ -7,12 +7,12 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDx7oxK76oJTpoyJTWYCibSWs7oNoRgzLA",
-  authDomain: "humancognitionauth.firebaseapp.com",
-  projectId: "humancognitionauth",
-  storageBucket: "humancognitionauth.appspot.com",
-  messagingSenderId: "1064929358039",
-  appId: "1:1064929358039:web:1551676237baf838e38092"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase

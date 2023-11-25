@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Index.scss";
 import axiosPatch from "../../axios";
-import Buttons from "../../Buttons"
+
 const End = ({ setWindowState, time }) => {
   const [endTime, setEndTime] = useState();
   const [middleTime, setMiddleTime] = useState();
