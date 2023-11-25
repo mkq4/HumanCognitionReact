@@ -7,14 +7,14 @@ const GameWindow = () => {
   return (
     <div className="game-window">
       <div className="container">
-        <div className="game-window-inner d-flex justify-center">
+        <div className="game-window-inner d-flex justify-center align-center flex-column">
           {windowState ? (
             <Game />
           ) : (
             <Start
-              gameName={<p className="start-text d-flex justify-center mt-50 mb-50">Visual Memory</p>}
+              gameName={<p className="start-text d-flex justify-center mt-50 ">Visual Memory</p>}
               content={
-							<div className="d-flex flex-column align-center jusify-center mt-50">
+							<div className="d-flex flex-column align-center jusify-center mt-30">
 								<img className="start-img" src="../../../../public/images/svg/visual.svg" alt="" />
 								<button className="button mt-50" onClick={()=> setWindowState(true)}>Start</button>
 							</div>
