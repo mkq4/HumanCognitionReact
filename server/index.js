@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const app = express()
 require('dotenv').config()
@@ -43,30 +43,36 @@ const zeroGameData = [
 
 app.post('/registration', (req, res) => {
     const {name, email, password} = req.body
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(password, salt);
-    RegistrationSchema.findOne({email: email})
-    .then(user => {
-        if(user) {
-            res.json('Account already exist')
-        } else {
-            const gameData = jwt.sign({data: zeroGameData}, JWT_DATA)
-            const token = jwt.sign({email: email, name: name}, JWT_USER)
-            RegistrationSchema.create({name: name, email: email, password: hash, token: token, gameData: gameData})
-            // .then(result => res.json(token)) // ищем по токену
-            .then(result => res.json({token: result.token, gameData: result.gameData}))
-            .catch(err => console.log(err))
-        }
-    }).catch(err => console.log(err))
+    // console.log(name === undefined || email === undefined || password === undefined);
+    if(name === undefined || email === undefined || password === undefined) {
+        res.json('Fill all inputs')
+    } else {
+        RegistrationSchema.findOne({email: email})
+        .then(user => {
+            if(user) {
+                res.json('Account already exist')
+            } else {
+                const gameData = jwt.sign({data: zeroGameData}, JWT_DATA)
+                const token = jwt.sign({email: email, name: name}, JWT_USER)
+                RegistrationSchema.create({name: name, email: email, password: password, token: token, gameData: gameData})
+                // .then(result => res.json(token)) // ищем по токену
+                .then(result => res.json({token: result.token, gameData: result.gameData}))
+                .catch(err => console.log(err))
+            }
+        }).catch(err => console.log(err))
+    }
+    // const salt = bcrypt.genSaltSync(10);
+    // const hash = bcrypt.hashSync(password, salt);
+
 })
 
 app.post('/login', (req, res) => {
     const {email, password} = req.body
     UserModel.findOne({email: email})
     .then(user => {
-        const isPasswordCorrect = bcrypt.compare(password, user.password);
         if(user) {
-            if(isPasswordCorrect){
+            
+            if(password == user.password){
                 res.json(user)
             } else {
                 res.json("incorrect login or password")
@@ -76,6 +82,7 @@ app.post('/login', (req, res) => {
         }
     })
 })
+
 
 app.post('/find', (req, res) => {
     const tokenUser = req.body.token
