@@ -1,5 +1,6 @@
-Сборщик: Vite
-Стэк:
-    React, express, mongodb, node js
-Для запросов: axios
-
+в папке humanCognitionReact
+cd humanCognition
+npm run dev
+cd ..
+cd server
+npm run dev
