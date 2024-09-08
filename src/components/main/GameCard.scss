@@ -6,11 +6,12 @@
         flex-direction: column;
     }
     &__card {
+        height: 100%;
+        padding: 20px 0;
         &::hover{
             cursor: pointer;
         }
-        height: 100%;
-        padding: 20px 0;
+        
     }
 
 }

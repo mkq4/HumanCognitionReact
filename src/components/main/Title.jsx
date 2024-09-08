@@ -10,7 +10,7 @@ const Title = () => {
         <section className="title">
         <div className="container">
             <div className="title__inner">
-                <img src="../../../public/images/svg/cognition.svg" alt="" className="title__logo"/>
+                <img src="/images/svg/cognition.svg" alt="" className="title__logo"/>
                 <h1 className="title__title">human cognition</h1>
                 <h2 className="title__subtitle">Realize your cognitive abilities through tests and games!</h2>
                 <button id="startBtn" className="title__btn" onClick={handleButtonClick} >Get Started</button>

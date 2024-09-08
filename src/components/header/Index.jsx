@@ -1,7 +1,7 @@
 import './Index.scss'
 import Modal from '../modal/Index';
 import React from 'react'; 
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const Header = () => {
     const [modalActive, setModalActive] = React.useState(false)
 
@@ -13,7 +13,7 @@ const Header = () => {
                     <div className="header__inner d-flex">
                         <div className="header-left">
                             <Link to="/" className="header-logo">
-                                <img id='logo' className="cognition-logo" src="../../../public/images/cognition.png" alt=""/>
+                                <img id='logo' className="cognition-logo" src="/images/cognition.png" alt=""/>
                                 human cognition
                             </Link>
                             <Link to="/profile" className="header-statistics" onClick={(e) => {

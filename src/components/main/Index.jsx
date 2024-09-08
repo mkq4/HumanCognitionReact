@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./Index.scss";
 import Title from "./Title";
 import GameCard from "./GameCard";
@@ -28,7 +29,7 @@ const Main = () => {
                     type={card.type}
                     size={card.size}
                     path={card.path}
-                    imgSrc={card.imgSrc}
+                    imgSrc={card.imgSrc.slice(15)}
                     imgAlt={card.imgAlt}
                     title={card.title}
                     subtitle={card.subtitle}
